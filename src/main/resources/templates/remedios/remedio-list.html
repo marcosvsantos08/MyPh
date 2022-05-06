@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<title>Meus Remedios</title>
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="form-group">
+			<h3 class="text-left">Cadastro de Remedios</h3>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Validade</th>
+					<th>Quantidade</th>
+					<th>Bula Online</th>
+					<th colspan="2" class="text-center">#</th>		
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="remedio: ${remedios}">
+				<td th:text="${remedio.id}"/>
+				<td th:text="${remedio.nomeRemedio}"/>
+				<td th:text="${remedio.vencimento}"/>
+				<td th:text="${remedio.quantidade}"/>
+				<td th:text="${remedio.bulaOnline}"/>
+				<td align="center" >
+					<a th:href="@{/remedios/{id}(id=${remedio.id})}" class="btn btn-default">
+						<span class="fa fa-edit"></span>
+					</a>
+					
+				</td>
+				<td align="center" >
+					<a th:href="@{/remedios/excluir/{id} (id=${remedio.id})}" class="btn btn-default">
+						<span class="fa fa-remove"></span>
+					</a>
+					
+				</td>
+				</tr>
+				
+			</tbody>	
+		</table>  
+	</div >
+</body>
+</html>
