@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 import sc.senai.sa.myphsa.model.remedio.entity.Remedio;
 
 
@@ -40,6 +41,16 @@ public class Usuario {
 	private String cep;
 	@Column(length = 11)
 	private String telefone;
+	@Column
+	private Boolean ativo;
+	
+	
+	public Boolean getAtivo() {
+		return ativo;
+	}
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
 	public Integer getUsuarioId() {
 		return usuarioId;
 	}

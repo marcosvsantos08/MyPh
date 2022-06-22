@@ -2,6 +2,8 @@ package sc.senai.sa.myphsa.controller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,6 +23,7 @@ import sc.senai.sa.myphsa.model.remedio.service.RemedioService;
 
 @Controller
 @RequestMapping("/remedios")
+@RolesAllowed("USER")
 public class RemedioController {
 		
 		@Autowired

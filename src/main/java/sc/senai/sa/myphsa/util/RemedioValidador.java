@@ -2,12 +2,12 @@ package sc.senai.sa.myphsa.util;
 
 import org.springframework.stereotype.Component;
 
-import sc.senai.sa.myphsa.model.remedio.dto.RemedioDTO;
+import sc.senai.sa.myphsa.model.remedio.entity.Remedio;
 
 @Component
 public class RemedioValidador {
 	
-	public String validarRemedio(RemedioDTO remedio) {
+	public String validarRemedio(Remedio remedio) {
 		if(remedio==null) {
 			return "O remedio não foi preenchido corretamente.";
 		}

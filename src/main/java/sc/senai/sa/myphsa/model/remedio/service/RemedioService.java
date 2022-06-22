@@ -25,6 +25,11 @@ public class RemedioService {
 		
 	}
 	public void salvarRemedio(Remedio remedio) {
+		String mensagemValidacao = remedioValidador.validarRemedio(remedio);
+		if (!mensagemValidacao.isEmpty()) {
+			throw new IllegalArgumentException(mensagemValidacao);
+		}
+				
 		remedioRepository.save(remedio);
 	}
 	
