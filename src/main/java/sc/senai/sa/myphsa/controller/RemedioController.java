@@ -2,8 +2,6 @@ package sc.senai.sa.myphsa.controller;
 
 import java.util.List;
 
-import javax.annotation.security.RolesAllowed;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,10 +18,8 @@ import sc.senai.sa.myphsa.model.remedio.entity.Remedio;
 import sc.senai.sa.myphsa.model.remedio.service.RemedioService;
 
 
-
 @Controller
 @RequestMapping("/remedios")
-@RolesAllowed("USER")
 public class RemedioController {
 		
 		@Autowired
@@ -50,7 +46,7 @@ public class RemedioController {
 		    
 		}
 		@DeleteMapping("/{id}")
-		public ResponseEntity<Void> excluirUsuario(@PathVariable Integer id) {
+		public ResponseEntity<Void> excluirRemedio(@PathVariable Integer id) {
 			remedioService.excluirRemedio(id);
 			return new ResponseEntity<>(HttpStatus.OK);
 		}

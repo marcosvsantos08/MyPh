@@ -56,7 +56,14 @@ public class Remedio {
 		this.bula = bula;
 	}
 	@ManyToOne
-	@JoinColumn(name = "USUARIOID", referencedColumnName = "USUARIOID")
+	@JoinColumn(name = "USUARIOID", referencedColumnName = "usuarioId")
 	private Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 }
