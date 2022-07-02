@@ -41,7 +41,7 @@ public class UsuarioController {
 		try {
 			usuarioService.salvarUsuario(usuario);
 			return new ResponseEntity<>(HttpStatus.CREATED);
-		} catch (IllegalArgumentException e) {
+		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 	}

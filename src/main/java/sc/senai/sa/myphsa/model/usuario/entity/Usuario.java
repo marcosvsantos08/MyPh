@@ -21,7 +21,7 @@ public class Usuario {
 	private Integer usuarioId;
 	@Column(length = 100)
 	private String nome;
-	@Column(length = 100)
+	@Column(length = 100, unique=true)
 	private String email;
 	@Column(length = 100)
 	private String senha ;
@@ -45,6 +45,11 @@ public class Usuario {
 	private Boolean ativo;
 	
 	
+	public Usuario( String nome,String email ,String senha  ) {
+		this.nome = nome;
+		this.email=email;
+		this.senha = senha;
+	}
 	public Boolean getAtivo() {
 		return ativo;
 	}

@@ -12,14 +12,12 @@ public class UsuarioValidador {
 			return "O usuario não foi preenchido corretamente.";
 		}
 		if(usuario.getNome()==null|| usuario.getNome().isEmpty()) {
-			return "O nome do remedio é obrigatorio.";			
+			return "O nome do usuario é obrigatorio.";			
 		}
 		if(usuario.getEmail()==null|| usuario.getEmail().isEmpty()) {
 			return "O seu e-mail é obrigatorio.";			
 		}
-		if(usuario.getTelefone()==null|| usuario.getTelefone().isEmpty()) {
-			return "O seu telefone é obrigatorio.";			
-		}
+			
 		return "";
 	}
 	
